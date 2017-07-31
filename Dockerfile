@@ -1,4 +1,4 @@
-FROM node
+FROM node:8.2-alpine
 
 WORKDIR /conf
 
