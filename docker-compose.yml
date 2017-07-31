@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  asset-compiler:
+    build:
+      context: ./
+    image: asset-compiler
+    container_name: asset-compiler
+    volumes:
+      - ./conf/gulpfile.js:/conf/gulpfile.js
+      - ./conf/package.json:/conf/package.json
+      - /var/www/vmhost/hud/hudexchange:/code
+    restart: unless-stopped
+    command: gulp
