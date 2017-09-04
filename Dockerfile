@@ -10,11 +10,15 @@ RUN \
   gulp \
   gulp-cli \
   gulp-log \
-  yargs && \
+  yargs
+
+RUN \
  npm install \
   gulp \
+  gulp-debug \
   gulp-less \
   gulp-rename \
   gulp-uglify \
+  gulp-plumber \
   gulp-watch \
-  gulp-watch-less
+  gulp-watch-less2
