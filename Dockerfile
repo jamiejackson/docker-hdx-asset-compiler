@@ -17,8 +17,9 @@ RUN \
   gulp \
   gulp-debug \
   gulp-less \
-  gulp-rename \
-  gulp-uglify \
   gulp-plumber \
+  gulp-rename \
+  gulp-sourcemaps \
+  gulp-uglify \
   gulp-watch \
   gulp-watch-less2

@@ -1,11 +1,12 @@
-var debug = require('gulp-debug');
 var gulp = require('gulp');
+var debug = require('gulp-debug');
+var less = require('gulp-less');
 var plumber = require('gulp-plumber');
+var rename = require("gulp-rename");
+var sourcemaps = require("gulp-sourcemaps");
 var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var watchLess = require('gulp-watch-less2');
-var less = require('gulp-less');
-var rename = require("gulp-rename");
 
 themeRoot = '/code/cfml/deployment_root/wwwroot/onecpd/includes/themes/hudexchange'
  
@@ -27,9 +28,11 @@ gulp.task('compileLess', function (hi) {
 			verbose: true
 			// awaitWriteFinish: true
 		}))
+		.pipe(sourcemaps.init())
 		.pipe(less())
 		.pipe(debug({title:'compiling to '}))
 		.pipe(gulp.dest(compileTo))
+		.pipe(sourcemaps.write(compileTo + '.map'))
 		.pipe(debug({title:'complete'}));
 });
 
